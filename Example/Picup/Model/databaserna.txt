@@ -1,0 +1,48 @@
+CREATE TABLE  `164681-picup`.`picup_user` (
+`m_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`m_username` VARCHAR( 40 ) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL ,
+`m_password` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL ,
+`m_role` VARCHAR( 30 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
+) ENGINE = INNODB;
+
+
+CREATE TABLE  `164681-picup`.`picup_comment` (
+`m_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`m_comment` VARCHAR( 140 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL ,
+`m_timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+`m_imageID` INT NOT NULL ,
+`m_userID` INT NOT NULL ,
+`m_user` VARCHAR( 40 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
+INDEX ( `m_imageID` )
+) ENGINE = INNODB;
+
+
+
+CREATE TABLE  `164681-picup`.`picup_image` (
+`m_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`m_filename` VARCHAR( 100 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL ,
+`m_description` INT( 40 ) NOT NULL ,
+`m_dateadded` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+`m_userid` INT NOT NULL ,
+INDEX (  `m_userid` )
+) ENGINE = INNODB;
+
+ALTER TABLE  `picup_image` ADD FOREIGN KEY (  `m_userid` ) REFERENCES  `164681-picup`.`picup_user` (
+`m_id`
+) ON DELETE CASCADE ON UPDATE NO ACTION ;
+
+ALTER TABLE  `picup_comment` ADD FOREIGN KEY (  `m_imageID` ) REFERENCES  `164681-picup`.`picup_image` (
+`m_id`
+) ON DELETE CASCADE ON UPDATE RESTRICT ;
+
+ALTER TABLE  `picup_imagerating` ADD FOREIGN KEY (  `m_id` ) REFERENCES  `164681-picup`.`picup_user` (
+`m_id`
+) ON DELETE NO ACTION ON UPDATE RESTRICT ;
+
+ALTER TABLE  `picup_imagerating` ADD FOREIGN KEY (  `m_imageID` ) REFERENCES  `164681-picup`.`picup_image` (
+`m_id`
+) ON DELETE CASCADE ON UPDATE RESTRICT ;
+
+ALTER TABLE  `picup_comment` ADD FOREIGN KEY (  `m_userID` ) REFERENCES  `164681-picup`.`picup_user` (
+`m_id`
+) ON DELETE CASCADE ON UPDATE RESTRICT ;

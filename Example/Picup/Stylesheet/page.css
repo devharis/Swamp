@@ -1,0 +1,924 @@
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: #444444;
+  	font-family: 'Signika', sans-serif;
+  	font-size: 100%;
+}
+
+#wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+input {	
+  	font-family: 'Signika', sans-serif;
+}
+
+h2
+{
+	font-size: 20px;
+	font-weight: normal;
+}
+
+img
+{
+	border: none;
+}
+
+#ProfilePic
+{
+	margin-top: 4px;
+	max-width: 100px;
+	height: auto;
+}
+
+.UserProfile
+{
+	color: #4E76C9;
+	font-weight: bold;
+	padding: 5px;
+	margin-bottop: 5px;
+}
+
+#LogoType
+{
+	position: absolute;
+	top: 30px;
+	left: 40px;
+	color: #4E76C9;
+	text-decoration: none;
+}
+	#LogoType h1
+	{
+		display: inline;
+	}
+
+.NoImagesToDisplay {
+	display: block;
+	width: 630px;
+	padding: 15px;
+	font-size: 30px;
+	color: #DBDBDB;
+	margin: 400px auto 0px auto;
+	background-color: #2B2B2B;
+}
+		.NoImagesToDisplay span
+		{
+			cursor: pointer;
+			font-weight: bold;
+			color: #4E76C9;
+			text-decoration: none;
+			-webkit-transition: all 0.1s linear;
+			-moz-transition: all 0.1s linear;
+			-o-transition: all 0.1s linear;
+			transition: all 0.1s linear;
+		}
+		.NoImagesToDisplay span:hover
+		{
+			color: #DDDDD1;			
+		}
+
+.ImageList
+{
+	margin-top: 15%;
+	padding-top: 40px;
+	padding-bottom: 20px;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	background: url(images/ui-bg_diagonals-thick_10_4a4a4a_40x40.png) repeat 0 0;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+}
+	.ImageList img 
+	{
+		-webkit-transition: all 0.5s;
+		border: 4px solid #444444;
+		max-width: 100%;
+	}
+	.ImageList img:hover
+	{	
+		border: 4px inset #2B2B2B;
+	}
+
+.ImageList select 
+{
+	color: #DBDBDB;
+	width: 140px;
+	border: none;
+	background-color: #2B2B2B;
+	padding: 5px;
+	font-weight: bold;
+}
+
+.ImageList .SortButton
+{
+	position: absolute;
+	cursor: pointer;
+	padding: 6px;
+	background-color: #2B2B2B;	
+	color: #4E76C9;
+	border: none;
+	font-weight: bold;
+	left: 180px;
+}
+	.ImageList .SortButton:hover
+	{
+		padding: 5px;
+		color: #DBDBDB;
+		border: 1px dotted #4E76C9;
+		border-left: none;
+	}
+
+.imageDiv
+{
+	float: left;
+	width: 420px;
+}
+	.imageDiv .imagedescription
+	{
+		visibility: hidden;
+		position: absolute;
+		top: 2px;
+		width: 418px;
+		margin-left: 10px;
+		background-color: #2B2B2B;
+		padding-top: 4px;
+		padding-left: 10px;
+		height: 30px;
+		font-size: 15px;
+		color: #FFFFFF;
+	}
+	.imageDiv .NumComNRate
+	{
+		visibility: hidden;
+		width: 420px;
+	}
+	.imageDiv .NumComments
+	{
+		padding: 5px;
+		position: absolute;
+		color: #DDDDD1;
+		margin-left: 20px;
+		bottom: 17px;
+		font-size: 14px;
+		background-color: #2B2B2B;
+	}
+	.imageDiv .NumRatings
+	{
+		padding: 5px;
+		position: absolute;
+		color: #DDDDD1;
+		bottom: 17px;
+		margin-left: 365px;
+		font-size: 14px;
+		background-color: #2B2B2B;
+	}
+	.imageDiv .imageDivHover
+	{
+		visibility: visible;
+	}
+
+.inputfield
+{
+	border: 1px #1A1A1A solid;
+	background: #414141;
+	margin-right: 5px;
+	margin-top: 4px;
+	width: 200px;
+	color: white;
+	height: 16px;
+}
+
+.inputfield:focus
+{
+	background: #545454;
+}
+	
+#confirmimage
+{
+	margin-top: 5px;
+	margin-left: 1px;
+	float: left;
+}
+
+#antibot
+{
+	margin-left: 14px;
+	margin-top: 10px;
+	width: 45px;
+}
+
+#file 
+{
+	background: #414141;
+	margin-right: 5px;
+	margin-top: 4px;
+	width: 200px;
+	color: white;
+	padding: 3px;
+	height: 20px;
+	font-weight: bold;	
+}
+
+#charNum
+{
+	display: inline;
+	float: right;
+}
+
+#dimmer
+{
+	display: none;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	opacity: 0;
+	background-color: #BDBDBD;
+	z-index: 50;
+}
+
+#Useradministration
+{
+	background: url(images/ui-bg_diagonals-thick_10_4a4a4a_40x40.png) repeat 0 0;
+	text-align: center;
+	padding: 10px;
+	width: 200px;
+}
+#Imageadministration {
+	background: url(images/ui-bg_diagonals-thick_10_4a4a4a_40x40.png) repeat 0 0;
+	text-align: center;
+	padding: 10px;	
+	width: 500px;
+}
+	#Useradministration th, #Imageadministration th
+	{
+		color:#DDDDD1;
+	}
+	#Useradministration td, #Imageadministration td
+	{
+		border-top: 1px solid white;
+		color: #DDDDD1;
+		padding: 5px;
+	}
+	#Useradministration td a, #Imageadministration  td a
+	{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+.ImageNComment, .ViewUser
+{
+	position: relative;
+	width: 75%;
+	margin: 70px auto 0px auto;
+	background: url(images/ui-bg_diagonals-thick_10_4a4a4a_40x40.png) repeat 0 0;
+}
+
+.BackButton
+{
+	position: absolute;
+	text-decoration: none;
+	display: inline;
+	top: 40px;
+	width: 70px;
+	padding: 10px;
+	color: #4E76C9;
+	font-weight: bold;
+	background-color: #2B2B2B;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	-o-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+	border-left: 1px dotted #4E76C9;
+}
+	.BackButton:hover 
+	{
+		color: #DDDDD1;
+		border-bottom: 1px dotted #4E76C9;
+		width: 100px;
+		left: -30px;
+	}
+
+.CommentForm
+{
+	position: absolute;
+	bottom: 50px;
+	right: 20px;
+	color: #DDDDD1;
+}
+	.CommentForm textarea
+	{
+		padding: 5px;
+		resize: none;
+		width: 390px;
+		height: 20px;
+		background-color: #2B2B2B;
+		color: #DDDDD1;
+		border: none;
+	}
+	
+	.CommentForm .Aprofile, #Useradministration a, #Imageadministration a
+	{
+		padding: 3px;
+		background-color: #2B2B2B;
+		text-decoration: none;
+		color:#4E76C9;
+		margin-left: -4px;
+		font-size: 13px;
+		-webkit-transition: all 0.1s linear;
+		-moz-transition: all 0.1s linear;
+		-o-transition: all 0.1s linear;
+		transition: all 0.1s linear;
+	}
+	.CommentForm .Aprofile:hover
+	{
+		padding: 2px;
+		color: #DDDDD1;
+		border: 1px dotted #4E76C9;
+		border-left: none;
+	}
+	.CommentForm span
+	{
+		font-size: 13px;
+		margin-left: -5px;
+		padding: 3px;
+		background-color: #2B2B2B;		
+	}
+	.CommentForm p
+	{
+		width: 380px;
+		padding: 10px;	
+		background-color: #2B2B2B;
+	}
+		.LoginToComment
+		{
+			width: 380px;
+			bottom: 50px;
+			position: absolute;
+			right: 20px;
+			padding: 10px;
+			background-color: #2B2B2B;
+			color: #DDDDD1;
+			font-size: 14px;
+		}
+		.LoginToComment span
+		{
+			cursor: pointer;
+			font-weight: bold;
+			color: #4E76C9;
+			text-decoration: none;
+			-webkit-transition: all 0.1s linear;
+			-moz-transition: all 0.1s linear;
+			-o-transition: all 0.1s linear;
+			transition: all 0.1s linear;
+		}
+		.LoginToComment span:hover, #Useradministration a:hover, #Imageadministration a:hover
+		{
+			color: #DDDDD1;			
+		}
+	
+.Comments
+{
+	position: absolute;
+	top: 50px;
+	right: 20px;
+	width: 400px;
+	height: 480px;
+	overflow-y: scroll;
+}
+	.Comment
+	{
+		height: auto;
+		display:block;
+		background-color: #2B2B2B;
+		color: #DDDDD1;
+		font-size: 14px;
+		font-family: Arial,sans-serif;
+		border-radius: 3px;
+		word-wrap: break-word;
+	}
+		.Comment p 
+		{
+			margin-left: 10px;
+			margin-top: 0px;
+			padding: 5px;
+		}
+		.CommentUser a
+		{
+			text-decoration: none;
+			margin-left: 5px;
+			font-size: 10px;
+			float: left;
+			color: #4E76C9;
+		}
+			.CommentUser a:hover
+			{
+				color: #DDDDD1;
+			}
+		.CommentDate
+		{
+			margin-left: 10px;
+			font-size: 10px;
+			float: left;
+			color: #AAA;
+		}
+		.Scroller-Container 
+		{
+		  position: absolute;
+		}
+		.DelComment
+		{
+			float: right;
+		}
+	
+.ViewImage
+{
+	padding-left: 20px;
+	width: 700px;
+	height: 800px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+	.ViewImageDiv
+	{
+		position: relative;
+		background-color: #2B2B2B;
+		padding: 20px;
+		padding-top: 30px;
+	}
+		.ViewImageDiv h2
+		{
+			position: absolute;
+			top: 3px;
+			margin: 0px;
+			color: #DDDDD1;
+		}
+		
+		.ViewImageDiv h4
+		{
+			position: absolute;
+			font-size: 14px;
+			top: 0px;
+			right: 20px;
+			margin: 5px;
+			color: #DDDDD1;
+		}
+		.ViewImageDiv .ImageUploader
+		{
+			font-size: 14px;
+			font-weight: bold;
+			text-decoration: none;
+			color: #4E76C9;
+		}
+			.ViewImageDiv .ImageUploader:hover
+			{
+				color: #DDDDD1;				
+			}
+			.ViewImageDiv .ImageUploaderHeader
+			{
+				position: absolute;
+				font-size: 14px;
+				bottom: 2px;
+				right: 25px;
+				color: #DDDDD1;						
+			}
+
+.ImageDeleteForm
+{
+	position: absolute;
+	bottom: 1px;
+}
+	.ImageDeleteForm .DelImageButton, .DelUserButton, .DelComment
+	{
+		cursor: pointer;
+		font-weight: bold;
+		border: none;
+		width: 50px;
+		background-color: #2B2B2B;
+		color: #850018;
+		border-left: 1px dotted #850018;	
+		-webkit-transition: all 0.1s linear;
+		-moz-transition: all 0.1s linear;
+		-o-transition: all 0.1s linear;
+		transition: all 0.1s linear;
+	}
+	.ImageDeleteForm .DelImageButton:hover, .DelUserButton:hover, .DelComment:hover
+	{
+		color: #DDDDD1;		
+		border-left: 1px dotted #850018;
+		border-bottom: 1px dotted #850018;
+		padding: -1px;
+		border-left: none;		
+	}
+
+.ShowEditForm {
+	position: absolute;
+	font-size: 13px;
+	bottom: 3px;
+	padding: 1px;
+	left: 75px;
+	cursor: pointer;
+	font-weight: bold;
+	border: none;
+	width: 40px;
+	background-color: #2B2B2B;
+	color: #4E76C9;	
+	border-left: 1px dotted #4E76C9;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	-o-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+	.ShowEditForm:hover
+	{
+		color: #DDDDD1;		
+		border-bottom: 1px dotted #4E76C9;	
+		border-left: none;
+		padding: -1px;
+	}
+
+.EditDescForm
+{
+	position: absolute;
+	top: 0px;
+	bottom: 1px;
+	left: 70px;
+}
+	.EditDescForm .EditDescButton
+	{
+		position: absolute;
+		left: 155px;
+		top: 5px;
+		cursor: pointer;
+		font-weight: bold;
+		border: none;
+		width: 70px;
+		background-color: #2B2B2B;
+		color: #4E76C9;		
+		-webkit-transition: all 0.1s linear;
+		-moz-transition: all 0.1s linear;
+		-o-transition: all 0.1s linear;
+		transition: all 0.1s linear;
+	}
+	.EditDescForm .EditDescButton:hover
+	{
+		color: #DDDDD1;		
+		border-bottom: 1px dotted #4E76C9;
+		padding: -1px;	
+	}
+	.EditDescForm .EditDescInput {
+		width: 200px;
+		position: absolute;
+		border: none;
+		left: -50px;
+		font-size: 20px;
+		background-color: #2B2B2B;
+		color: #DDDDD1;	
+		
+	}
+.ImageRatings
+{
+	position: absolute;
+	bottom: -10px;
+	left: 280px;
+	font-size: 16px;
+}
+	.ImageRatings .Dislikes
+	{
+		padding: 5px;
+		width: 70px;
+		position: absolute;
+		left: 100px;
+		color: #850018;
+		background-color: #2B2B2B;
+		font-weight: bold;
+	}
+	.ImageRatings .Likes
+	{
+		padding: 5px;
+		width: 70px;
+		position: absolute;
+		left: 10px;
+		color: #006600;
+		background-color: #2B2B2B;
+		font-weight: bold;
+	}
+	.ImageRatings p {
+		margin: 0px;
+		padding: 0px;
+		color: #DDDDD1;
+	}
+
+.LikeForm
+{
+	position: absolute;
+	border: none;
+	font-weight: bold;
+	bottom: -15px;
+	left: 200px;
+}
+	.LikeForm .LikeButton
+	{
+		cursor: pointer;
+		padding: 10px;
+		width: 80px;
+		position: absolute;
+		left: 0px;
+		border: none;
+		color: #006600;
+		font-weight: bold;
+		background-color: #2B2B2B;
+		-webkit-transition: all 0.1s linear;
+		-moz-transition: all 0.1s linear;
+		-o-transition: all 0.1s linear;
+		transition: all 0.1s linear;
+	}
+		.LikeForm .LikeButton:hover, .LikeButton:focus
+		{
+			border-right: 1px dotted #006600;
+			width: 90px;
+			color: #DDDDD1;
+		}
+	.LikeForm .DislikeButton
+	{
+		cursor: pointer;
+		padding: 10px;
+		width: 80px;
+		position: absolute;
+		right: -350px;
+		border: none;
+		color: #850018;
+		font-weight: bold;
+		background-color: #2B2B2B;
+		-webkit-transition: all 0.1s linear;
+		-moz-transition: all 0.1s linear;
+		-o-transition: all 0.1s linear;
+		transition: all 0.1s linear;
+	}
+			.LikeForm .DislikeButton:hover, .DislikeButton:focus
+		{
+			border-left: 1px dotted #850018;
+			color: #DDDDD1;
+			padding-right: 10px;
+			width: 90px;
+		}
+		
+	.LikeForm .UnrateButton
+	{
+		cursor: pointer;
+		position: absolute;
+		width: 110px;
+		padding: 1px;
+		border: none;
+		top: 50px;
+		left: 120px;
+		background-color: #2B2B2B;
+		color: #4E76C9;
+	}
+	.LikeForm .UnrateButton:hover
+	{
+		color: #DDDDD1;
+		border: 1px dotted #4E76C9;
+	}
+
+.ViewUser
+{
+	padding: 10px;
+	height: 670px;
+	width: 1000px;
+}
+	.ViewUser .BackButton
+	{
+		left: 0px;
+	}
+	.ViewUser .BackButton:hover
+	{
+		left: -30px;
+	}
+	.ViewUser .UserControll
+	{
+		position: absolute;
+		padding: 10px;
+		padding-bottom: 30px;
+		left: 30px;
+		top: 120px;
+		width: 220px;
+		background-color: #2B2B2B;
+	}
+		.UserControll h2
+		{
+			margin: 0px;
+			color: #DDDDD1;
+		}
+		.UserControll .UserDeleteForm
+		{
+			position: absolute;
+		}
+		.UserControll .ShowEditUserForm
+		{
+			position: absolute;
+			font-size: 13px;
+			top: 262px;
+			padding: 1px;
+			padding-left: 7px;
+			left: 65px;
+			cursor: pointer;
+			font-weight: bold;
+			border: none;
+			width: 40px;
+			background-color: #2B2B2B;
+			color: #4E76C9;	
+			border-left: 1px dotted #4E76C9;
+			-webkit-transition: all 0.1s linear;
+			-moz-transition: all 0.1s linear;
+			-o-transition: all 0.1s linear;
+			transition: all 0.1s linear;
+		}
+			.ShowEditUserForm:hover
+			{
+				color: #DDDDD1;		
+				border-bottom: 1px dotted #4E76C9;	
+				border-left: none;
+				padding: -1px;
+			}
+		.UserControll .EditUserForm
+		{
+			margin-top: 30px;
+			padding: 5px;
+			border-top: 1px dotted #4E76C9;
+		}
+			.UserControll .EditUserForm label
+			{
+				color: #999;
+				padding: 0px;
+				margin: 0px;
+				font-size: 14px;
+			}
+			.UserControll .EditUserForm input 
+			{
+				padding: 3px;
+				font-weight: normal;
+			}
+
+
+.RecentImages ul
+{
+	position: absolute;
+	left: 320px;
+	top: 103px;
+	min-width: 100px;
+	padding: 10px;
+	padding-top: 20px;
+	background-color: #2B2B2B;
+}			
+	.RecentImages li
+	{
+		padding: 5px;
+		background-color: #2B2B2B;
+		float: left;
+		list-style: none;
+	}	
+	.RecentImages #RecentImagesHeader {
+		display: inline;
+		position: absolute;
+		right: 595px;		
+		top: 109px;
+		z-index: 1;
+		color: #DDDDD1;
+		font-size: 15px;
+	}	
+	.RecentImages li img
+	{
+		width: 120px;
+		height: auto;
+	}	
+	.RecentImages li img:hover
+	{
+		border: 1px inset #4E76C9;
+		width: 118px;
+		height: 88px;
+	}
+
+.formButton {
+	margin-top: 10px;
+	-moz-box-shadow:inset 0px 1px 0px 0px #fff2ff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fff2ff;
+	box-shadow:inset 0px 1px 0px 0px #fff2ff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dbdbdb), color-stop(1, #adadad) );
+	background:-moz-linear-gradient( center top, #dbdbdb 5%, #adadad 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dbdbdb', endColorstr='#adadad');
+	background-color:#dbdbdb;
+	border:1px solid #828282;
+	display:inline-block;
+	color:#000000;
+	font-family:Trebuchet MS;
+	font-size:14px;
+	font-weight:normal;
+	padding:1px 15px;
+	text-decoration:none;
+	text-shadow:1px 1px 2px #ffffff;
+}
+	.formButton:hover {
+		background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #adadad), color-stop(1, #dbdbdb) );
+		background:-moz-linear-gradient( center top, #adadad 5%, #dbdbdb 100% );
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#adadad', endColorstr='#dbdbdb');
+		background-color:#adadad;
+		cursor: pointer;
+	}
+		.formButton:active {
+			position:relative;
+			top:1px;			
+		}
+		
+
+/* Turn on a 13x13 scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 13px;
+}
+
+::-webkit-scrollbar-button:vertical {
+    background-color: silver;
+    border: 1px solid gray;
+}
+
+/* Turn on single button up on top, and down on bottom */
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+    display: block;
+}
+
+/* Turn off the down area up on top, and up area on bottom */
+::-webkit-scrollbar-button:vertical:start:increment,
+::-webkit-scrollbar-button:vertical:end:decrement {
+    display: none;
+}
+
+/* Place The scroll down button at the bottom */
+::-webkit-scrollbar-button:vertical:increment {
+    display: none;
+}
+
+/* Place The scroll up button at the up */
+::-webkit-scrollbar-button:vertical:decrement {
+    display: none;
+}
+
+/* Place The scroll down button at the bottom */
+::-webkit-scrollbar-button:horizontal:increment {
+    display: none;
+}
+
+/* Place The scroll up button at the up */
+::-webkit-scrollbar-button:horizontal:decrement {
+    display: none;
+}
+
+::-webkit-scrollbar-track:vertical {
+    background-color: blue;
+    border: 1px dashed pink;
+}
+
+/* Top area above thumb and below up button */
+::-webkit-scrollbar-track-piece:vertical:start {
+    border: 0px;
+}
+
+/* Bottom area below thumb and down button */
+::-webkit-scrollbar-track-piece:vertical:end {
+    border: 0px;
+}
+
+/* Track below and above */
+::-webkit-scrollbar-track-piece {
+    background-color: #444;
+}
+
+/* The thumb itself */
+::-webkit-scrollbar-thumb:vertical {
+    height: 50px;
+    background-color: #999;
+}
+
+/* The thumb itself */
+::-webkit-scrollbar-thumb:horizontal {
+    height: 50px;
+    background-color: gray;
+}
+
+/* Corner */
+::-webkit-scrollbar-corner:vertical {
+    background-color: black;
+}
+
+/* Resizer */
+::-webkit-scrollbar-resizer:vertical {
+    background-color: gray;
+}
